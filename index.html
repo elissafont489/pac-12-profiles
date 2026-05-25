@@ -1,0 +1,1533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>New Pac-12 Conference — University Guide 2026–27</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --pac12-navy: #001F5B;
+    --pac12-gold: #C8A951;
+    --pac12-light: #F4F6FA;
+    --pac12-white: #FFFFFF;
+    --pac12-gray: #4A4A4A;
+    --pac12-mid: #8A8A9A;
+    --radius: 4px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Barlow', sans-serif;
+    background: var(--pac12-light);
+    color: var(--pac12-gray);
+    line-height: 1.6;
+  }
+
+  /* ── HEADER ── */
+  .site-header {
+    background: var(--pac12-navy);
+    color: white;
+    padding: 2.5rem 2rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .site-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 18px,
+      rgba(200,169,81,0.07) 18px,
+      rgba(200,169,81,0.07) 19px
+    );
+  }
+  .site-header .badge {
+    display: inline-block;
+    background: var(--pac12-gold);
+    color: var(--pac12-navy);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.9rem;
+    border-radius: 2px;
+    margin-bottom: 1rem;
+  }
+  .site-header h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    letter-spacing: 0.04em;
+    line-height: 1;
+    position: relative;
+  }
+  .site-header .subtitle {
+    margin-top: 0.7rem;
+    font-size: 1rem;
+    font-weight: 300;
+    color: rgba(255,255,255,0.75);
+    letter-spacing: 0.04em;
+    position: relative;
+  }
+  .site-header .stat-row {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+    position: relative;
+  }
+  .site-header .stat { text-align: center; }
+  .site-header .stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    color: var(--pac12-gold);
+    display: block;
+  }
+  .site-header .stat-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+  }
+
+  /* ── TOC ── */
+  .toc-wrap {
+    background: var(--pac12-white);
+    border-bottom: 3px solid var(--pac12-gold);
+    padding: 1.2rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  }
+  .toc {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.2rem;
+    justify-content: center;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .toc a {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600;
+    font-size: 0.82rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--pac12-navy);
+    padding: 0.25rem 0.6rem;
+    border-radius: 2px;
+    transition: background 0.15s, color 0.15s;
+  }
+  .toc a:hover { background: var(--pac12-navy); color: white; }
+
+  /* ── MAIN LAYOUT ── */
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  /* ── SCHOOL CARD ── */
+  .school-card {
+    background: white;
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-bottom: 3rem;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.07);
+    scroll-margin-top: 60px;
+  }
+
+  .school-header {
+    padding: 1.8rem 2rem 1.5rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .school-color-bar {
+    width: 6px;
+    align-self: stretch;
+    flex-shrink: 0;
+    border-radius: 3px;
+  }
+
+  .school-title-block { flex: 1; min-width: 200px; }
+  .school-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.2rem;
+    letter-spacing: 0.03em;
+    line-height: 1;
+  }
+  .school-tagline {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-top: 0.3rem;
+  }
+  .school-location {
+    font-size: 0.9rem;
+    color: var(--pac12-mid);
+    margin-top: 0.25rem;
+  }
+
+  .school-meta-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.9rem;
+  }
+  .chip {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.6rem;
+    border-radius: 2px;
+    border: 1.5px solid currentColor;
+  }
+
+  /* ── GRID SECTIONS ── */
+  .school-body {
+    padding: 0 2rem 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  @media (max-width: 680px) {
+    .school-body { grid-template-columns: 1fr; }
+    .school-header { flex-direction: column; }
+  }
+  .full-width { grid-column: 1 / -1; }
+
+  .section-block {
+    border-left: 3px solid var(--pac12-gold);
+    padding-left: 1rem;
+  }
+  .section-block h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--pac12-mid);
+    margin-bottom: 0.5rem;
+  }
+  .section-block p, .section-block li {
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+  .section-block ul {
+    padding-left: 1.1rem;
+  }
+  .section-block ul li { margin-bottom: 0.15rem; }
+
+  /* ── SPORTS GRID ── */
+  .sports-two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .sports-col h4 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+    color: var(--pac12-navy);
+  }
+  .sports-col ul {
+    padding-left: 1rem;
+    font-size: 0.85rem;
+  }
+  .sports-col ul li { margin-bottom: 0.1rem; }
+
+  /* ── SOCIAL LINKS ── */
+  .social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.75rem;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: opacity 0.15s;
+    color: white;
+  }
+  .social-link:hover { opacity: 0.82; }
+  .social-x        { background: #000; }
+  .social-fb       { background: #1877F2; }
+  .social-ig       { background: linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); }
+  .social-threads  { background: #101010; }
+  .social-reddit   { background: #FF4500; }
+
+  /* ── NOTABLE CALLOUT ── */
+  .callout {
+    background: var(--pac12-navy);
+    color: white;
+    border-radius: var(--radius);
+    padding: 1rem 1.2rem;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    font-style: italic;
+  }
+  .callout strong { color: var(--pac12-gold); font-style: normal; }
+
+  /* ── DIVIDER ── */
+  .pac12-divider {
+    text-align: center;
+    margin: 2.5rem 0 2rem;
+    position: relative;
+  }
+  .pac12-divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--pac12-gold), transparent);
+  }
+  .pac12-divider span {
+    position: relative;
+    background: var(--pac12-light);
+    padding: 0 1rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--pac12-mid);
+  }
+
+  /* ── FOOTER ── */
+  .site-footer {
+    background: var(--pac12-navy);
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.78rem;
+  }
+  .site-footer a { color: var(--pac12-gold); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<!-- ════════════ HEADER ════════════ -->
+<header class="site-header">
+  <div class="badge">Official Launch: July 1, 2026</div>
+  <h1>New Pac-12 Conference<br>University Guide 2026–27</h1>
+  <p class="subtitle">A complete reference for all nine foundational member institutions</p>
+  <div class="stat-row">
+    <div class="stat"><span class="stat-num">9</span><span class="stat-label">Member Schools</span></div>
+    <div class="stat"><span class="stat-num">8</span><span class="stat-label">Football Programs</span></div>
+    <div class="stat"><span class="stat-num">282K+</span><span class="stat-label">Combined Enrollment</span></div>
+    <div class="stat"><span class="stat-num">7</span><span class="stat-label">States Represented</span></div>
+  </div>
+</header>
+
+<!-- ════════════ NAVIGATION ════════════ -->
+<nav class="toc-wrap">
+  <div class="toc">
+    <a href="#txst">Texas State</a>
+    <a href="#boise">Boise State</a>
+    <a href="#csu">Colorado State</a>
+    <a href="#fresno">Fresno State</a>
+    <a href="#gonzaga">Gonzaga</a>
+    <a href="#oregonstate">Oregon State</a>
+    <a href="#sdsu">San Diego State</a>
+    <a href="#usu">Utah State</a>
+    <a href="#wsu">Washington State</a>
+  </div>
+</nav>
+
+<!-- ════════════ MAIN ════════════ -->
+<main class="container">
+
+  <!-- ───── TEXAS STATE ───── -->
+  <section class="school-card" id="txst">
+    <div class="school-header">
+      <div class="school-color-bar" style="background:linear-gradient(to bottom,#461D7C,#C0A030)"></div>
+      <div class="school-title-block">
+        <div class="school-name" style="color:#461D7C">Texas State University</div>
+        <div class="school-tagline" style="color:#C0A030">Bobcats · The Star of Texas</div>
+        <div class="school-location">📍 San Marcos, Texas &nbsp;|&nbsp; Founded 1899 &nbsp;|&nbsp; Public Research University</div>
+        <div class="school-meta-chips">
+          <span class="chip" style="color:#461D7C">Maroon &amp; Gold</span>
+          <span class="chip" style="color:#461D7C">44,000+ Students</span>
+          <span class="chip" style="color:#461D7C">Sun Belt → Pac-12</span>
+          <span class="chip" style="color:#C0A030">R2 → R1 Path</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="school-body">
+
+      <div class="section-block">
+        <h3>🏛 At a Glance</h3>
+        <ul>
+          <li><strong>Mascot:</strong> Boko the Bobcat (costumed) &amp; live bobcat tradition</li>
+          <li><strong>Colors:</strong> Maroon &amp; Old Gold (with Royal Purple accent)</li>
+          <li><strong>Stadium:</strong> UFCU Stadium (capacity ~30,000)</li>
+          <li><strong>Arena:</strong> Strahan Arena</li>
+          <li><strong>Website:</strong> <a href="https://www.txst.edu" target="_blank">txst.edu</a></li>
+          <li><strong>Athletics:</strong> <a href="https://txstatebobcats.com" target="_blank">txstatebobcats.com</a></li>
+          <li><strong>Undergrad Enrollment:</strong> ~37,000</li>
+        </ul>
+      </div>
+
+      <div class="section-block">
+        <h3>⭐ If You Know, You Know</h3>
+        <ul>
+          <li>LBJ attended TXST (then Southwest Texas State) &amp; it shaped his views on education access</li>
+          <li>Situated on the San Marcos River — tubing the river is a sacred Bobcat tradition</li>
+          <li>Spring Lake &amp; the Meadows Center: one of the world's largest artesian springs on campus</li>
+          <li>George Strait ("King of Country") holds a degree from TXST</li>
+          <li>Hosted a 2024 U.S. Presidential debate — rising national profile</li>
+          <li>Opened a campus in San Luis Potosí, Mexico in 2024</li>
+          <li>Light The Star fundraising campaign — $2M for new student-athlete academic center</li>
+        </ul>
+      </div>
+
+      <div class="section-block">
+        <h3>🎓 Academics &amp; Research</h3>
+        <ul>
+          <li>On path to R1 Carnegie classification by 2027</li>
+          <li>Research strengths: <strong>Water resources</strong>, education, business, performing arts, health sciences</li>
+          <li>Hosts the Meadows Center for Water and the Environment (globally recognized)</li>
+          <li>Nearly doubled doctoral programs since 2022; strong community college partnership network</li>
+          <li>International study abroad programs launched 2022–24</li>
+          <li>Top programs: Mass Communication, Education, Business (McCoy), Criminal Justice</li>
+        </ul>
+      </div>
+
+      <div class="section-block">
+        <h3>🏆 Recent Athletic Highlights</h3>
+        <ul>
+          <li>Football: 3 consecutive bowl game victories entering Pac-12 era</li>
+          <li>Women's Soccer: 2025 Sun Belt Conference Tournament champions</li>
+          <li>$149M invested in facilities &amp; athletic infrastructure since 2022</li>
+          <li>New $37M Johnny &amp; Nathali Weisman Football Performance Center opened 2025</li>
+          <li>Track &amp; Field consistently produces All-Americans</li>
+        </ul>
+      </div>
+
+      <div class="section-block full-width">
+        <h3>⚽ Sports Programs</h3>
+        <div class="sports-two-col">
+          <div class="sports-col">
+            <h4>Men's Sports</h4>
+            <ul>
+              <li>Football</li><li>Basketball</li><li>Baseball</li>
+              <li>Cross Country</li><li>Track &amp; Field (Indoor/Outdoor)</li>
+              <li>Golf</li>
+            </ul>
+          </div>
+          <div class="sports-col">
+            <h4>Women's Sports</h4>
+            <ul>
+              <li>Basketball</li><li>Soccer</li><li>Softball</li>
+              <li>Volleyball</li><li>Cross Country</li><li>Track &amp; Field (Indoor/Outdoor)</li>
+              <li>Golf</li><li>Tennis</li>
+            </ul>
+          </div>
+        </div>
+        <p style="margin-top:0.75rem;font-size:0.85rem;"><strong>Spirit Programs:</strong> Strutters (precision dance team), TXST Cheerleaders, Sound of the Star Marching Band, Bobcat Growl (annual kickoff pep rally)</p>
+      </div>
+
+      <div class="section-block full-width">
+        <h3>📱 Social Media</h3>
+        <div class="social-links">
+          <a class="social-link social-x" href="https://x.com/txst" target="_blank">𝕏 @txst (University)</a>
+          <a class="social-link social-x" href="https://x.com/txstatebobcats" target="_blank">𝕏 @txstatebobcats (Athletics)</a>
+          <a class="social-link social-fb" href="https://www.facebook.com/txst" target="_blank">Facebook: Texas State</a>
+          <a class="social-link social-ig" href="https://www.instagram.com/txst" target="_blank">Instagram: @txst</a>
+          <a class="social-link social-ig" href="https://www.instagram.com/txstatebobcats" target="_blank">Instagram: @txstatebobcats</a>
+          <a class="social-link social-threads" href="https://www.threads.net/@txst" target="_blank">Threads: @txst</a>
+          <a class="social-link social-reddit" href="https://www.reddit.com/r/txst/" target="_blank">r/txst</a>
+        </div>
+      </div>
+
+      <div class="section-block full-width">
+        <h3>📚 Student Life &amp; Student-Athlete Info</h3>
+        <p>TXST is one of the most diverse universities in Texas with a vibrant campus life centered on the San Marcos River, numerous student organizations, and a growing Greek community. The new Student-Athlete Academic Center (funded via the Light the Star campaign) provides tutoring, advising, and career development. TXST Athletics has emphasized academic excellence as part of its Pac-12 readiness messaging. The university holds a top ranking among Texas public universities for social mobility and first-generation student success.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="pac12-divider"><span>★ Pac-12 Member ★</span></div>
+
+  <!-- ───── BOISE STATE ───── -->
+  <section class="school-card" id="boise">
+    <div class="school-header">
+      <div class="school-color-bar" style="background:linear-gradient(to bottom,#0033A0,#F47920)"></div>
+      <div class="school-title-block">
+        <div class="school-name" style="color:#0033A0">Boise State University</div>
+        <div class="school-tagline" style="color:#F47920">Broncos · Blue &amp; Orange</div>
+        <div class="school-location">📍 Boise, Idaho &nbsp;|&nbsp; Founded 1932 &nbsp;|&nbsp; Public Research University</div>
+        <div class="school-meta-chips">
+          <span class="chip" style="color:#0033A0">Blue &amp; Orange</span>
+          <span class="chip" style="color:#0033A0">28,500 Students</span>
+          <span class="chip" style="color:#0033A0">Mountain West → Pac-12</span>
+          <span class="chip" style="color:#F47920">R2 Carnegie</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="school-body">
+
+      <div class="section-block">
+        <h3>🏛 At a Glance</h3>
+        <ul>
+          <li><strong>Mascot:</strong> Buster Bronco</li>
+          <li><strong>Colors:</strong> Blue &amp; Orange</li>
+          <li><strong>Stadium:</strong> Albertsons Stadium (the iconic blue turf)</li>
+          <li><strong>Arena:</strong> ExtraMile Arena</li>
+          <li><strong>Website:</strong> <a href="https://www.boisestate.edu" target="_blank">boisestate.edu</a></li>
+          <li><strong>Athletics:</strong> <a href="https://broncosports.com" target="_blank">broncosports.com</a></li>
+        </ul>
+      </div>
+
+      <div class="section-block">
+        <h3>⭐ If You Know, You Know</h3>
+        <ul>
+          <li><strong>The Blue Turf ("Smurf Turf")</strong> — the famous blue artificial turf at Albertsons Stadium has confused opposing teams since 1986</li>
+          <li>The 2007 Fiesta Bowl Statue of Liberty + hook-and-lateral play vs. Oklahoma is one of the most iconic plays in college football history</li>
+          <li>28 consecutive winning seasons — longest current active FBS streak</li>
+          <li>Boise is one of America's fastest-growing cities; proximity to outdoor recreation is a massive recruiting tool</li>
+          <li>Micron Technology invested $40M in materials science programs at BSU</li>
+        </ul>
+      </div>
+
+      <div class="section-block">
+        <h3>🎓 Academics &amp; Research</h3>
+        <ul>
+          <li>R2 Carnegie (high research activity), aspiring to R1</li>
+          <li>Pillars: <strong>Biomedical research, smart materials, robotics &amp; autonomous systems</strong></li>
+          <li>Partnership with University of Washington for medical education</li>
+          <li>Strong programs: Cybersecurity, Health Sciences (Nursing), Computer Science, Public Affairs</li>
+          <li>Entrepreneurship benefits from Boise's booming tech startup ecosystem</li>
+        </ul>
+      </div>
+
+      <div class="section-block">
+        <h3>🏆 Recent Athletic Highlights</h3>
+        <ul>
+          <li>Football: No. 3 overall seed in expanded 12-team CFP in 2024; 9-5 in 2025</li>
+          <li>28 consecutive winning seasons — longest active streak in FBS</li>
+          <li>Women's gymnastics &amp; beach volleyball nationally ranked perennially</li>
+          <li>Track &amp; Field has produced multiple Olympic athletes</li>
+          <li>Football has earned multiple BCS/NY6 bowl victories</li>
+        </ul>
+      </div>
+
+      <div class="section-block full-width">
+        <h3>⚽ Sports Programs</h3>
+        <div class="sports-two-col">
+          <div class="sports-col">
+            <h4>Men's Sports (7)</h4>
+            <ul>
+              <li>Football</li><li>Basketball</li><li>Indoor Track &amp; Field</li>
+              <li>Outdoor Track &amp; Field</li><li>Cross Country</li>
+              <li>Tennis</li><li>Wrestling</li>
+            </ul>
+          </div>
+          <div class="sports-col">
+            <h4>Women's Sports (11)</h4>
+            <ul>
+              <li>Basketball</li><li>Cross Country</li><li>Golf</li>
+              <li>Gymnastics</li><li>Soccer</li><li>Softball</li>
+              <li>Indoor/Outdoor Track &amp; Field</li>
+              <li>Tennis</li><li>Volleyball</li><li>Beach Volleyball</li>
+            </ul>
+          </div>
+        </div>
+        <p style="margin-top:0.75rem;font-size:0.85rem;"><strong>Spirit Programs:</strong> Boise State Cheerleaders, Golden Girls Dance Team, Sound of the Treasure Valley Marching Band</p>
+      </div>
+
+      <div class="section-block full-width">
+        <h3>📱 Social Media</h3>
+        <div class="social-links">
+          <a class="social-link social-x" href="https://x.com/boise_state" target="_blank">𝕏 @boise_state</a>
+          <a class="social-link social-x" href="https://x.com/bronconation" target="_blank">𝕏 @bronconation (Athletics)</a>
+          <a class="social-link social-fb" href="https://www.facebook.com/boisestate" target="_blank">Facebook: Boise State</a>
+          <a class="social-link social-ig" href="https://www.instagram.com/boise_state" target="_blank">Instagram: @boise_state</a>
+          <a class="social-link social-ig" href="https://www.instagram.com/broncosports" target="_blank">Instagram: @broncosports</a>
+          <a class="social-link social-threads" href="https://www.threads.net/@boise_state" target="_blank">Threads: @boise_state</a>
+          <a class="social-link social-reddit" href="https://www.reddit.com/r/broncosports/" target="_blank">r/broncosports</a>
+        </div>
+      </div>
+
+      <div class="section-block full-width">
+        <h3>📚 Student Life &amp; Student-Athlete Info</h3>
+        <p>BSU has a lively campus culture strongly connected to Boise's outdoor scene — the Boise River Greenbelt, nearby Bogus Basin ski area, and hiking are central to student life. Greek life is present but not dominant. Intramural flag football draws 100+ teams each fall. Sports — especially football — are a massive part of campus identity. The BSU Student-Athlete Success Center provides academic support; football student-athletes have consistently maintained strong graduation rates. Notable alumni in NFL include Ryan Clady and Demaryius Thomas. Kellen Moore (NFL coach) is the program's most iconic modern player.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="pac12-divider"><span>★ Pac-12 Member ★</span></div>
+
+  <!-- ───── COLORADO STATE ───── -->
+  <section class="school-card" id="csu">
+    <div class="school-header">
+      <div class="school-color-bar" style="background:linear-gradient(to bottom,#1E4D2B,#C8C372)"></div>
+      <div class="school-title-block">
+        <div class="school-name" style="color:#1E4D2B">Colorado State University</div>
+        <div class="school-tagline" style="color:#C8C372">Rams · Green &amp; Gold</div>
+        <div class="school-location">📍 Fort Collins, Colorado &nbsp;|&nbsp; Founded 1870 &nbsp;|&nbsp; Public Land-Grant Research University</div>
+        <div class="school-meta-chips">
+          <span class="chip" style="color:#1E4D2B">Green &amp; Gold</span>
+          <span class="chip" style="color:#1E4D2B">34,200 Students</span>
+          <span class="chip" style="color:#1E4D2B">Mountain West → Pac-12</span>
+          <span class="chip" style="color:#C8A000">R1 Carnegie</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="school-body">
+
+      <div class="section-block">
+        <h3>🏛 At a Glance</h3>
+        <ul>
+          <li><strong>Mascot:</strong> CAM the Ram (costumed); Cam II (live ram mascot)</li>
+          <li><strong>Colors:</strong> Green &amp; Gold</li>
+          <li><strong>Stadium:</strong> Canvas Stadium (capacity ~41,000)</li>
+          <li><strong>Arena:</strong> Moby Arena</li>
+          <li><strong>Website:</strong> <a href="https://www.colostate.edu" target="_blank">colostate.edu</a></li>
+          <li><strong>Athletics:</strong> <a href="https://csurams.com" target="_blank">csurams.com</a></li>
+        </ul>
+      </div>
+
+      <div class="section-block">
+        <h3>⭐ If You Know, You Know</h3>
+        <ul>
+          <li>Fort Collins consistently ranked one of the <em>best cities to live in America</em> — #1 for quality of life in multiple surveys</li>
+          <li>CSU is one of only 10 doctoral universities <em>worldwide</em> recognized for comprehensive sustainability (environmental, social, and economic)</li>
+          <li>Becky Hammon (NBA/WNBA coaching pioneer) is a CSU alum</li>
+          <li>300 days of sunshine per year — hiking, biking, and skiing are as much a part of the culture as Ram football</li>
+          <li>Canvas Stadium opened in 2017 and is the crown jewel of CSU athletics — no parking lots; fans walk or ride to every game</li>
+          <li>CSU has its own veterinary teaching hospital — one of the nation's finest</li>
+        </ul>
+      </div>
+
+      <div class="section-block">
+        <h3>🎓 Academics &amp; Research</h3>
+        <ul>
+          <li>R1 Carnegie classification (very high research activity)</li>
+          <li>Research investment exceeds <strong>$308 million/year</strong></li>
+          <li>Pillars: <strong>Clean energy &amp; sustainability, veterinary medicine, translational healthcare, atmospheric science, infectious disease</strong></li>
+          <li>Top Impact Rankings (Times Higher Ed 2025): "Zero Hunger," "Climate Action," "Life on Land"</li>
+          <li>Endowment: $667.5M (2025)</li>
+          <li>US News 2026: ranked among top 150 national universities</li>
+        </ul>
+      </div>
+
+      <div class="section-block">
+        <h3>🏆 Recent Athletic Highlights</h3>
+        <ul>
+          <li>Men's &amp; Women's Track &amp; Field: 16 combined Mountain West championships since 2015</li>
+          <li>Women's volleyball: perennially competitive nationally</li>
+          <li>Wrestling has a long tradition of national qualifiers</li>
+          <li>Canvas Stadium has set MWC attendance records</li>
+        </ul>
+      </div>
+
+      <div class="section-block full-width">
+        <h3>⚽ Sports Programs</h3>
+        <div class="sports-two-col">
+          <div class="sports-col">
+            <h4>Men's Sports</h4>
+            <ul>
+              <li>Football</li><li>Basketball</li><li>Cross Country</li>
+              <li>Indoor/Outdoor Track &amp; Field</li><li>Tennis</li><li>Wrestling</li>
+            </ul>
+          </div>
+          <div class="sports-col">
+            <h4>Women's Sports</h4>
+            <ul>
+              <li>Basketball</li><li>Cross Country</li><li>Golf</li>
+              <li>Soccer</li><li>Softball</li><li>Swimming &amp; Diving</li>
+              <li>Indoor/Outdoor Track &amp; Field</li><li>Tennis</li><li>Volleyball</li>
+            </ul>
+          </div>
+        </div>
+        <p style="margin-top:0.75rem;font-size:0.85rem;"><strong>Spirit Programs:</strong> Ram Cheer, Cam the Ram (live mascot), Aggie Band (CSU's marching band), RamNation fan organization</p>
+      </div>
+
+      <div class="section-block full-width">
+        <h3>📱 Social Media</h3>
+        <div class="social-links">
+          <a class="social-link social-x" href="https://x.com/coloradostate" target="_blank">𝕏 @coloradostate</a>
+          <a class="social-link social-x" href="https://x.com/CSURams" target="_blank">𝕏 @CSURams (Athletics)</a>
+          <a class="social-link social-fb" href="https://www.facebook.com/coloradostateuniversity" target="_blank">Facebook: CSU</a>
+          <a class="social-link social-ig" href="https://www.instagram.com/coloradostate" target="_blank">Instagram: @coloradostate</a>
+          <a class="social-link social-ig" href="https://www.instagram.com/csurams" target="_blank">Instagram: @csurams</a>
+          <a class="social-link social-threads" href="https://www.threads.net/@coloradostate" target="_blank">Threads: @coloradostate</a>
+          <a class="social-link social-reddit" href="https://www.reddit.com/r/CSURams/" target="_blank">r/CSURams</a>
+        </div>
+      </div>
+
+      <div class="section-block full-width">
+        <h3>📚 Student Life &amp; Student-Athlete Info</h3>
+        <p>CSU is known for an exceptionally livable college experience — Fort Collins is a quintessential college town with a world-class craft beer scene, thriving local businesses, and direct access to Rocky Mountain National Park. The university is Bee Campus USA certified and has extensive sustainability infrastructure. The 17:1 student-faculty ratio enables strong mentorship. CSU has a robust student-athlete academic support center; the football and track programs consistently graduate student-athletes at high rates. Notable alum Walter Scott Jr. (Berkshire Hathaway board) is one of the university's top philanthropists.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="pac12-divider"><span>★ Pac-12 Member ★</span></div>
+
+  <!-- ───── FRESNO STATE ───── -->
+  <section class="school-card" id="fresno">
+    <div class="school-header">
+      <div class="school-color-bar" style="background:linear-gradient(to bottom,#CC0033,#003DA5)"></div>
+      <div class="school-title-block">
+        <div class="school-name" style="color:#CC0033">California State University, Fresno</div>
+        <div class="school-tagline" style="color:#003DA5">Bulldogs · The Red Wave</div>
+        <div class="school-location">📍 Fresno, California &nbsp;|&nbsp; Founded 1911 &nbsp;|&nbsp; Public University (Cal State System)</div>
+        <div class="school-meta-chips">
+          <span class="chip" style="color:#CC0033">Cardinal Red &amp; Blue</span>
+          <span class="chip" style="color:#CC0033">24,300 Students</span>
+          <span class="chip" style="color:#CC0033">Mountain West → Pac-12</span>
+          <span class="chip" style="color:#003DA5">R2 Carnegie</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="school-body">
+
+      <div class="section-block">
+        <h3>🏛 At a Glance</h3>
+        <ul>
+          <li><strong>Mascot:</strong> Victor E. Bulldog IV (live English Bulldog) &amp; Time Out (costumed mascot)</li>
+          <li><strong>Colors:</strong> Cardinal Red &amp; Blue</li>
+          <li><strong>Stadium:</strong> Valley Children's Stadium (capacity ~41,000)</li>
+          <li><strong>Arena:</strong> Save Mart Center</li>
+          <li><strong>Website:</strong> <a href="https://www.fresnostate.edu" target="_blank">fresnostate.edu</a></li>
+          <li><strong>Athletics:</strong> <a href="https://gobulldogs.com" target="_blank">gobulldogs.com</a></li>
+        </ul>
+      </div>
+
+      <div class="section-block">
+        <h3>⭐ If You Know, You Know</h3>
+        <ul>
+          <li><strong>The Red Wave</strong> — Fresno State fans are among the loudest, most passionate fan bases in the West; red-out traditions at every home game</li>
+          <li>Live mascot Victor E. Bulldog IV is a campus celebrity with his own fan following</li>
+          <li>Fresno State has one of the largest agriculture programs in the U.S. — the 1,011-acre University Farm is a working farm students manage</li>
+          <li>Paul George (nine-time NBA All-Star) attended Fresno State briefly before going pro</li>
+          <li>Bowl record: 6-1 in bowl games since 2017 — among the best in Group of Five programs</li>
+          <li>The rivalry with San Diego State is called <em>"The Old Oil Can"</em></li>
+          <li>The Save Mart Center hosts major concerts and NBA/WNBA exhibitions — a bona fide pro-level arena</li>
+        </ul>
+      </div>
+
+      <div class="section-block">
+        <h3>🎓 Academics &amp; Research</h3>
+        <ul>
+          <li>R2 Carnegie research institution</li>
+          <li>Serves as the flagship university of California's Central Valley</li>
+          <li>Pillars: <strong>Molecular, cellular &amp; genetic systems; engineering; health &amp; human services; applied agricultural sciences</strong></li>
+          <li>Leading university for first-generation college students in California</li>
+          <li>Conducting research at Panoche Hills (endangered species) &amp; Morro Bay</li>
+          <li>College of Science and Mathematics includes biology, chemistry, and physics research labs</li>
+        </ul>
+      </div>
+
+      <div class="section-block">
+        <h3>🏆 Recent Athletic Highlights</h3>
+        <ul>
+          <li>Mountain West Conference Football Champions: 2022</li>
+          <li>Bowl record: 6-1 since 2017 (among best in non-Power Five)</li>
+          <li>9-4 football record in 2025 under new HC Matt Entz</li>
+          <li>Baseball consistently competes for national tournament berths (Pete Beiden Field)</li>
+          <li>Women's softball traditionally strong nationally</li>
+        </ul>
+      </div>
+
+      <div class="section-block full-width">
+        <h3>⚽ Sports Programs</h3>
+        <div class="sports-two-col">
+          <div class="sports-col">
+            <h4>Men's Sports</h4>
+            <ul>
+              <li>Football</li><li>Basketball</li><li>Baseball</li>
+              <li>Golf</li><li>Tennis</li><li>Track &amp; Field</li>
+              <li>Wrestling</li><li>Water Polo</li>
+            </ul>
+          </div>
+          <div class="sports-col">
+            <h4>Women's Sports</h4>
+            <ul>
+              <li>Basketball</li><li>Cross Country</li><li>Equestrian</li>
+              <li>Golf</li><li>Lacrosse</li><li>Soccer</li>
+              <li>Softball</li><li>Tennis</li><li>Track &amp; Field</li>
+              <li>Volleyball</li><li>Water Polo</li>
+            </ul>
+          </div>
+        </div>
+        <p style="margin-top:0.75rem;font-size:0.85rem;"><strong>Spirit Programs:</strong> Fresno State Cheer Squad, Bud Light Dawg Pound (fan organization), Bulldog Marching Band, Dogettes Dance Team</p>
+      </div>
+
+      <div class="section-block full-width">
+        <h3>📱 Social Media</h3>
+        <div class="social-links">
+          <a class="social-link social-x" href="https://x.com/fresnostate" target="_blank">𝕏 @fresnostate</a>
+          <a class="social-link social-x" href="https://x.com/GoBulldogs" target="_blank">𝕏 @GoBulldogs (Athletics)</a>
+          <a class="social-link social-fb" href="https://www.facebook.com/FresnoState" target="_blank">Facebook: Fresno State</a>
+          <a class="social-link social-ig" href="https://www.instagram.com/fresnostate" target="_blank">Instagram: @fresnostate</a>
+          <a class="social-link social-ig" href="https://www.instagram.com/gobulldogs" target="_blank">Instagram: @gobulldogs</a>
+          <a class="social-link social-threads" href="https://www.threads.net/@fresnostate" target="_blank">Threads: @fresnostate</a>
+          <a class="social-link social-reddit" href="https://www.reddit.com/r/fresnostate/" target="_blank">r/fresnostate</a>
+        </div>
+      </div>
+
+      <div class="section-block full-width">
+        <h3>📚 Student Life &amp; Student-Athlete Info</h3>
+        <p>Fresno State is deeply embedded in the Central Valley community with a high proportion of first-generation college students and a strong culture of academic support. The Resnick Student Union is a hub for campus activity. Fresno State's food security programs (including an on-campus food pantry) are nationally recognized. Student-athletes receive support through the Smittcamp Alumni Association Scholars program and dedicated athletic academic advisors. The university has produced athletes across multiple NFL, NBA, and MLB rosters, including longtime MLB star Trevor Frerichs.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="pac12-divider"><span>★ Pac-12 Member ★</span></div>
+
+  <!-- ───── GONZAGA ───── -->
+  <section class="school-card" id="gonzaga">
+    <div class="school-header">
+      <div class="school-color-bar" style="background:linear-gradient(to bottom,#002967,#FFFFFF)"></div>
+      <div class="school-title-block">
+        <div class="school-name" style="color:#002967">Gonzaga University</div>
+        <div class="school-tagline" style="color:#CC0000">Bulldogs · The Zags · Basketball Royalty</div>
+        <div class="school-location">📍 Spokane, Washington &nbsp;|&nbsp; Founded 1887 &nbsp;|&nbsp; Private Jesuit University</div>
+        <div class="school-meta-chips">
+          <span class="chip" style="color:#002967">Blue &amp; White (Red accent)</span>
+          <span class="chip" style="color:#002967">7,400 Students</span>
+          <span class="chip" style="color:#002967">WCC → Pac-12 (non-football)</span>
+          <span class="chip" style="color:#CC0000">Jesuit Catholic</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="school-body">
+
+      <div class="section-block">
+        <h3>🏛 At a Glance</h3>
+        <ul>
+          <li><strong>Mascot:</strong> Spike the Bulldog</li>
+          <li><strong>Colors:</strong> Blue, White &amp; Red</li>
+          <li><strong>Arena:</strong> McCarthey Athletic Center (capacity ~6,000 — perennially sold out)</li>
+          <li><strong>Fight Song:</strong> "Go Gonzaga"</li>
+          <li><strong>Website:</strong> <a href="https://www.gonzaga.edu" target="_blank">gonzaga.edu</a></li>
+          <li><strong>Athletics:</strong> <a href="https://gozags.com" target="_blank">gozags.com</a></li>
+          <li><strong>Note:</strong> Gonzaga is a Pac-12 member in all sports <em>except football</em> (Gonzaga has not fielded a football team since WWII)</li>
+        </ul>
+      </div>
+
+      <div class="section-block">
+        <h3>⭐ If You Know, You Know</h3>
+        <ul>
+          <li>Gonzaga men's basketball has made the <strong>NCAA Tournament every year since 1999</strong> — an almost unprecedented streak</li>
+          <li>Back-to-back National Championship game appearances: 2017 &amp; 2021</li>
+          <li>McCarthey Athletic Center is one of the most intimidating home courts in America — the "Kennel" atmosphere</li>
+          <li>Bing Crosby ("White Christmas") is a Gonzaga alum — his ghost is said to walk the campus</li>
+          <li>Small school (<7,400 students) that punches astronomically above its weight in basketball</li>
+          <li>Mark Few is a coaching legend — his seat at Gonzaga is considered among the best in the country</li>
+          <li>U.S. Senator Catherine Cortez Masto (Nevada) graduated from Gonzaga Law</li>
+          <li>Gonzaga Law School is consistently top-ranked in the Pacific Northwest</li>
+        </ul>
+      </div>
+
+      <div class="section-block">
+        <h3>🎓 Academics &amp; Research</h3>
+        <ul>
+          <li>Private Jesuit liberal arts model with graduate and professional programs</li>
+          <li>Top-ranked programs: <strong>Business (School of Business), Engineering &amp; Applied Science, Law, Nursing</strong></li>
+          <li>Jesuit values emphasize <em>cura personalis</em> (care for the whole person) — very personalized education</li>
+          <li>Strong study abroad program consistent with Jesuit educational mission</li>
+          <li>New president: Dr. Katia Passerini, inaugurated September 2025</li>
+          <li>27th president in university's 138-year history</li>
+        </ul>
+      </div>
+
+      <div class="section-block">
+        <h3>🏆 Recent Athletic Highlights</h3>
+        <ul>
+          <li>Men's basketball: NCAA Tournament every year since 1999; Final Four appearances; back-to-back title game runs (2017, 2021)</li>
+          <li>Women's basketball: nationally competitive and growing</li>
+          <li>Baseball, soccer, tennis consistently competitive in WCC and now Pac-12</li>
+          <li>Notable NBA alumni: John Stockton, Adam Morrison, Kelly Olynyk, Brandon Clarke, Jalen Suggs, Chet Holmgren</li>
+        </ul>
+      </div>
+
+      <div class="section-block full-width">
+        <h3>⚽ Sports Programs (No Football)</h3>
+        <div class="sports-two-col">
+          <div class="sports-col">
+            <h4>Men's Sports</h4>
+            <ul>
+              <li>Basketball ⭐</li><li>Baseball</li>
+              <li>Cross Country</li><li>Golf</li>
+              <li>Soccer</li><li>Tennis</li>
+              <li>Track &amp; Field</li>
+            </ul>
+          </div>
+          <div class="sports-col">
+            <h4>Women's Sports</h4>
+            <ul>
+              <li>Basketball</li><li>Cross Country</li>
+              <li>Golf</li><li>Rowing</li><li>Soccer</li>
+              <li>Tennis</li><li>Track &amp; Field</li>
+              <li>Volleyball</li>
+            </ul>
+          </div>
+        </div>
+        <p style="margin-top:0.75rem;font-size:0.85rem;"><strong>Spirit Programs:</strong> GU Dance Team, Zag Cheerleaders, The Kennel Club (official student fan section — one of the best atmospheres in college basketball)</p>
+      </div>
+
+      <div class="section-block full-width">
+        <h3>📱 Social Media</h3>
+        <div class="social-links">
+          <a class="social-link social-x" href="https://x.com/gonzagau" target="_blank">𝕏 @gonzagau</a>
+          <a class="social-link social-x" href="https://x.com/ZagMBB" target="_blank">𝕏 @ZagMBB (Men's Basketball)</a>
+          <a class="social-link social-fb" href="https://www.facebook.com/gonzagauniversity" target="_blank">Facebook: Gonzaga</a>
+          <a class="social-link social-ig" href="https://www.instagram.com/gonzagauniversity" target="_blank">Instagram: @gonzagauniversity</a>
+          <a class="social-link social-ig" href="https://www.instagram.com/gozags" target="_blank">Instagram: @gozags (Athletics)</a>
+          <a class="social-link social-threads" href="https://www.threads.net/@gonzagauniversity" target="_blank">Threads: @gonzagauniversity</a>
+          <a class="social-link social-reddit" href="https://www.reddit.com/r/gonzaga/" target="_blank">r/gonzaga</a>
+        </div>
+      </div>
+
+      <div class="section-block full-width">
+        <h3>📚 Student Life &amp; Student-Athlete Info</h3>
+        <p>Gonzaga's small size creates an unusually intimate campus culture where professors know students by name. The Jesuit model emphasizes ethics, service, and leadership alongside academic rigor. Student-athletes at Gonzaga are particularly well-supported; the basketball program has produced remarkable academic success stories alongside NBA stars. Spokane is an underrated mid-size city with a vibrant arts scene, outdoor recreation access (Spokane River, Riverside State Park, nearby ski areas), and a community that treats Gonzaga basketball like a religion. The Kennel Club student fan section is a rite of passage — games at McCarthey are regularly among the most intense atmospheres in college basketball.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="pac12-divider"><span>★ Pac-12 Member ★</span></div>
+
+  <!-- ───── OREGON STATE ───── -->
+  <section class="school-card" id="oregonstate">
+    <div class="school-header">
+      <div class="school-color-bar" style="background:linear-gradient(to bottom,#DC4405,#000000)"></div>
+      <div class="school-title-block">
+        <div class="school-name" style="color:#DC4405">Oregon State University</div>
+        <div class="school-tagline" style="color:#000000">Beavers · Original Pac-12 Survivor</div>
+        <div class="school-location">📍 Corvallis, Oregon &nbsp;|&nbsp; Founded 1868 &nbsp;|&nbsp; Public Land-Grant Research University</div>
+        <div class="school-meta-chips">
+          <span class="chip" style="color:#DC4405">Orange &amp; Black</span>
+          <span class="chip" style="color:#DC4405">38,000 Students</span>
+          <span class="chip" style="color:#DC4405">Legacy Pac-12 Member</span>
+          <span class="chip" style="color:#000">R1 Carnegie</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="school-body">
+
+      <div class="section-block">
+        <h3>🏛 At a Glance</h3>
+        <ul>
+          <li><strong>Mascot:</strong> Benny Beaver (since 1952)</li>
+          <li><strong>Colors:</strong> Orange &amp; Black</li>
+          <li><strong>Stadium:</strong> Reser Stadium (Corvallis)</li>
+          <li><strong>Arena:</strong> Gill Coliseum</li>
+          <li><strong>Website:</strong> <a href="https://oregonstate.edu" target="_blank">oregonstate.edu</a></li>
+          <li><strong>Athletics:</strong> <a href="https://osubeavers.com" target="_blank">osubeavers.com</a></li>
+        </ul>
+      </div>
+
+      <div class="section-block">
+        <h3>⭐ If You Know, You Know</h3>
+        <ul>
+          <li>OSU is one of only two universities in the U.S. to hold land-, sea-, space-, AND sun-grant status</li>
+          <li>The <em>Civil War</em> rivalry game vs. Oregon is one of the longest-running in college football — now a cross-conference rivalry</li>
+          <li>Benny Beaver first appeared in 1952, created by engineering major Ken Austin (who went on to co-found A-dec dental equipment)</li>
+          <li>Corvallis is a quintessential Pacific Northwest college town — biking culture, farmers markets, craft beer</li>
+          <li>Jen-Hsun Huang (NVIDIA co-founder &amp; CEO) is an OSU alum — a massive figure in AI and tech</li>
+          <li>Peggy Cherng (Panda Express founder &amp; CEO) is also an OSU alum</li>
+          <li>College World Series baseball dynasty: national champions in 2006, 2007, and 2018</li>
+          <li>The Ho'ike (Luau) is a 68-year campus tradition featuring Polynesian dance</li>
+        </ul>
+      </div>
+
+      <div class="section-block">
+        <h3>🎓 Academics &amp; Research</h3>
+        <ul>
+          <li>R1 Carnegie classification (very high research activity)</li>
+          <li>Pillars: <strong>Health &amp; biotechnology, clean energy &amp; climate science, data science &amp; AI, ocean science, agriculture</strong></li>
+          <li>Hatfield Marine Science Center (Newport, OR) — nationally recognized ocean research facility</li>
+          <li>College of Agricultural Sciences — one of the oldest and most respected in the nation</li>
+          <li>Strong programs: Engineering, Pharmacy, Forestry, Veterinary Medicine</li>
+          <li>OSU-Cascades campus in Bend, OR offers additional degree programs</li>
+        </ul>
+      </div>
+
+      <div class="section-block">
+        <h3>🏆 Recent Athletic Highlights</h3>
+        <ul>
+          <li>Baseball: College World Series Champions 2006, 2007, 2018 — historic dynasty</li>
+          <li>Wrestling: nationally ranked program with multiple NCAA qualifiers</li>
+          <li>Rowing: nationally prominent women's program</li>
+          <li>1962: Terry Baker (QB) won the Heisman Trophy — OSU's only Heisman winner</li>
+          <li>Gymnastics: consistently Top 10 nationally</li>
+          <li>OSU held on through the Pac-12 collapse with dignity — became a symbol of institutional resilience</li>
+        </ul>
+      </div>
+
+      <div class="section-block full-width">
+        <h3>⚽ Sports Programs</h3>
+        <div class="sports-two-col">
+          <div class="sports-col">
+            <h4>Men's Sports</h4>
+            <ul>
+              <li>Football</li><li>Basketball</li><li>Baseball ⭐</li>
+              <li>Cross Country</li><li>Golf</li>
+              <li>Indoor/Outdoor Track &amp; Field</li>
+              <li>Wrestling</li>
+            </ul>
+          </div>
+          <div class="sports-col">
+            <h4>Women's Sports</h4>
+            <ul>
+              <li>Basketball</li><li>Cross Country</li><li>Golf</li>
+              <li>Gymnastics</li><li>Rowing</li><li>Soccer</li>
+              <li>Softball</li><li>Indoor/Outdoor Track &amp; Field</li>
+              <li>Volleyball</li>
+            </ul>
+          </div>
+        </div>
+        <p style="margin-top:0.75rem;font-size:0.85rem;"><strong>Spirit Programs:</strong> OSU Cheer, Orange &amp; Black Dance Team, Spirit of the West Marching Band, The Orange Army (student fan section)</p>
+      </div>
+
+      <div class="section-block full-width">
+        <h3>📱 Social Media</h3>
+        <div class="social-links">
+          <a class="social-link social-x" href="https://x.com/oregonstate" target="_blank">𝕏 @oregonstate</a>
+          <a class="social-link social-x" href="https://x.com/beaversnation" target="_blank">𝕏 @beaversnation (Athletics)</a>
+          <a class="social-link social-fb" href="https://www.facebook.com/OregonStateUniversity" target="_blank">Facebook: Oregon State</a>
+          <a class="social-link social-ig" href="https://www.instagram.com/oregonstate" target="_blank">Instagram: @oregonstate</a>
+          <a class="social-link social-ig" href="https://www.instagram.com/osubeavers" target="_blank">Instagram: @osubeavers</a>
+          <a class="social-link social-threads" href="https://www.threads.net/@oregonstate" target="_blank">Threads: @oregonstate</a>
+          <a class="social-link social-reddit" href="https://www.reddit.com/r/oregonstate/" target="_blank">r/oregonstate</a>
+        </div>
+      </div>
+
+      <div class="section-block full-width">
+        <h3>📚 Student Life &amp; Student-Athlete Info</h3>
+        <p>Corvallis has repeatedly been named one of America's best college towns. OSU's campus culture embraces sustainability, outdoor adventure, and Pacific Northwest traditions. The Ho'ike Luau (68+ years) reflects the school's large Hawaiian and Pacific Islander student community. The Pac-12 Student-Athlete Academic Achievement Award has been a consistent honor for OSU athletes. The university's SAAC (Student-Athlete Advisory Committee) is among the most active in the country. OSU athletics benefits from a passionate alumni base and strong relationships with Portland-area business and industry. Enrollment grew significantly after the Pac-12 collapse as out-of-state and international students rallied to support "the holdouts."</p>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="pac12-divider"><span>★ Pac-12 Member ★</span></div>
+
+  <!-- ───── SAN DIEGO STATE ───── -->
+  <section class="school-card" id="sdsu">
+    <div class="school-header">
+      <div class="school-color-bar" style="background:linear-gradient(to bottom,#A6192E,#000000)"></div>
+      <div class="school-title-block">
+        <div class="school-name" style="color:#A6192E">San Diego State University</div>
+        <div class="school-tagline" style="color:#000000">Aztecs · America's Finest City</div>
+        <div class="school-location">📍 San Diego, California &nbsp;|&nbsp; Founded 1897 &nbsp;|&nbsp; Public Research University (Cal State System)</div>
+        <div class="school-meta-chips">
+          <span class="chip" style="color:#A6192E">Scarlet &amp; Black</span>
+          <span class="chip" style="color:#A6192E">41,000+ Students</span>
+          <span class="chip" style="color:#A6192E">Mountain West → Pac-12</span>
+          <span class="chip" style="color:#000">R1 Carnegie</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="school-body">
+
+      <div class="section-block">
+        <h3>🏛 At a Glance</h3>
+        <ul>
+          <li><strong>Mascot:</strong> Aztec Warrior (costumed); Az-Tec the costumed bulldog sometimes used at games</li>
+          <li><strong>Colors:</strong> Scarlet &amp; Black</li>
+          <li><strong>Stadium:</strong> Snapdragon Stadium (capacity ~35,000 — opened 2022, state-of-the-art)</li>
+          <li><strong>Arena:</strong> Viejas Arena</li>
+          <li><strong>Website:</strong> <a href="https://www.sdsu.edu" target="_blank">sdsu.edu</a></li>
+          <li><strong>Athletics:</strong> <a href="https://goaztecs.com" target="_blank">goaztecs.com</a></li>
+        </ul>
+      </div>
+
+      <div class="section-block">
+        <h3>⭐ If You Know, You Know</h3>
+        <ul>
+          <li>2023 NCAA Men's Basketball National Championship runners-up — one of the greatest Cinderella runs ever</li>
+          <li>Snapdragon Stadium (opened 2022) is widely considered the best new multi-use sports venue in the U.S. — it also hosted Copa América 2024 matches</li>
+          <li>Ellen Ochoa (first Latina astronaut) is an SDSU alum</li>
+          <li>Marshall Faulk (NFL Hall of Fame) is an SDSU alum</li>
+          <li>Location in San Diego gives SDSU recruiting and lifestyle advantages that few programs can match</li>
+          <li>The Aztec Warrior tradition dates to 1941 and includes elaborate ceremonial regalia at home games</li>
+          <li>San Diego is one of the nation's premier research hubs (biotech, defense, space) — SDSU sits in the middle of it</li>
+          <li>SDSU Mission Valley campus development — one of the largest urban university expansions in the US</li>
+        </ul>
+      </div>
+
+      <div class="section-block">
+        <h3>🎓 Academics &amp; Research</h3>
+        <ul>
+          <li>R1 Carnegie classification (very high research activity)</li>
+          <li>Pillars: <strong>Public health &amp; "Smart Health" research, sustainability &amp; water resources, cybersecurity, biomedical research</strong></li>
+          <li>SDSU is one of the largest research universities in the California State University system</li>
+          <li>Strong programs: Business (Fowler College), Public Health, Engineering, Computer Science, Nursing</li>
+          <li>SDSU Research Foundation manages $220M+ in annual research expenditures</li>
+          <li>Deep connections to San Diego's biotech, defense tech, and digital media industries</li>
+        </ul>
+      </div>
+
+      <div class="section-block">
+        <h3>🏆 Recent Athletic Highlights</h3>
+        <ul>
+          <li>Men's Basketball: 2023 NCAA National Championship runners-up (lost to UConn)</li>
+          <li>Men's Basketball: consistently among top 25 nationally under coach Brian Dutcher</li>
+          <li>Football: Mountain West Conference Champions multiple times; 9-4 in 2025</li>
+          <li>Women's soccer and tennis have been MWC contenders</li>
+          <li>Snapdragon Stadium hosted Copa América 2024 — elevated the program's national profile dramatically</li>
+        </ul>
+      </div>
+
+      <div class="section-block full-width">
+        <h3>⚽ Sports Programs</h3>
+        <div class="sports-two-col">
+          <div class="sports-col">
+            <h4>Men's Sports</h4>
+            <ul>
+              <li>Football</li><li>Basketball ⭐</li>
+              <li>Baseball</li><li>Cross Country</li>
+              <li>Golf</li><li>Soccer</li>
+              <li>Swimming &amp; Diving</li><li>Tennis</li>
+              <li>Track &amp; Field</li><li>Water Polo</li>
+            </ul>
+          </div>
+          <div class="sports-col">
+            <h4>Women's Sports</h4>
+            <ul>
+              <li>Basketball</li><li>Cross Country</li>
+              <li>Golf</li><li>Rowing</li>
+              <li>Soccer</li><li>Softball</li>
+              <li>Swimming &amp; Diving</li><li>Tennis</li>
+              <li>Track &amp; Field</li><li>Volleyball</li>
+              <li>Water Polo</li>
+            </ul>
+          </div>
+        </div>
+        <p style="margin-top:0.75rem;font-size:0.85rem;"><strong>Spirit Programs:</strong> SDSU Cheer, Aztec Dance Team, Spirit of the Aztecs Marching Band, The Show (official student section — one of the best in the Mountain West)</p>
+      </div>
+
+      <div class="section-block full-width">
+        <h3>📱 Social Media</h3>
+        <div class="social-links">
+          <a class="social-link social-x" href="https://x.com/sdsu" target="_blank">𝕏 @sdsu</a>
+          <a class="social-link social-x" href="https://x.com/AztecAthletics" target="_blank">𝕏 @AztecAthletics</a>
+          <a class="social-link social-fb" href="https://www.facebook.com/sdsu" target="_blank">Facebook: SDSU</a>
+          <a class="social-link social-ig" href="https://www.instagram.com/sdsu" target="_blank">Instagram: @sdsu</a>
+          <a class="social-link social-ig" href="https://www.instagram.com/goaztecs" target="_blank">Instagram: @goaztecs</a>
+          <a class="social-link social-threads" href="https://www.threads.net/@sdsu" target="_blank">Threads: @sdsu</a>
+          <a class="social-link social-reddit" href="https://www.reddit.com/r/SDSU/" target="_blank">r/SDSU</a>
+        </div>
+      </div>
+
+      <div class="section-block full-width">
+        <h3>📚 Student Life &amp; Student-Athlete Info</h3>
+        <p>SDSU students enjoy one of the best college locations in America — 5 miles from Pacific beaches, year-round perfect weather, and proximity to a world-class city. The 76% graduation rate (above national average for Cal State schools) reflects strong academic programming. Student-athletes benefit from the Student-Athlete Success Center and have historically maintained competitive GPAs. SDSU's "The Show" student section was ranked among the nation's top college basketball atmospheres. The Viejas Arena is regularly sold out for basketball — making Pac-12 home games a genuine premium experience. SDSU's alumni network in the San Diego/Southern California market is massive.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="pac12-divider"><span>★ Pac-12 Member ★</span></div>
+
+  <!-- ───── UTAH STATE ───── -->
+  <section class="school-card" id="usu">
+    <div class="school-header">
+      <div class="school-color-bar" style="background:linear-gradient(to bottom,#003399,#FFFFFF)"></div>
+      <div class="school-title-block">
+        <div class="school-name" style="color:#003399">Utah State University</div>
+        <div class="school-tagline" style="color:#888">Aggies · Big Blue · Logan's Own</div>
+        <div class="school-location">📍 Logan, Utah &nbsp;|&nbsp; Founded 1888 &nbsp;|&nbsp; Public Land-Grant Research University</div>
+        <div class="school-meta-chips">
+          <span class="chip" style="color:#003399">Navy, White &amp; Pewter</span>
+          <span class="chip" style="color:#003399">~30,000 Students</span>
+          <span class="chip" style="color:#003399">Mountain West → Pac-12</span>
+          <span class="chip" style="color:#888">Land-Grant Heritage</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="school-body">
+
+      <div class="section-block">
+        <h3>🏛 At a Glance</h3>
+        <ul>
+          <li><strong>Mascot:</strong> Big Blue (costumed; was a live bull historically)</li>
+          <li><strong>Colors:</strong> Navy Blue, White &amp; Pewter</li>
+          <li><strong>Stadium:</strong> Maverik Stadium (Logan, capacity ~25,000)</li>
+          <li><strong>Arena:</strong> Dee Glen Smith Spectrum (capacity ~10,270 — one of the loudest in the MWC)</li>
+          <li><strong>Fight Song:</strong> "Hail the Utah Aggies"</li>
+          <li><strong>Website:</strong> <a href="https://www.usu.edu" target="_blank">usu.edu</a></li>
+          <li><strong>Athletics:</strong> <a href="https://utahstateaggies.com" target="_blank">utahstateaggies.com</a></li>
+        </ul>
+      </div>
+
+      <div class="section-block">
+        <h3>⭐ If You Know, You Know</h3>
+        <ul>
+          <li>Big Blue arrives at football games on a <strong>Harley-Davidson motorcycle between two pillars of fire</strong> — it's as wild as it sounds</li>
+          <li>ROTC cannon fires every time the Aggies score — military tradition is deeply embedded in campus culture</li>
+          <li>The Dee Glen Smith Spectrum (The "Spectrum") is one of college basketball's most raucous home courts — 97.5% season-ticket holder capacity for decades</li>
+          <li>Jordan Love (Green Bay Packers QB) is a USU alum</li>
+          <li>Bobby Wagner (NFL linebacker, 8x Pro Bowl) is a USU alum</li>
+          <li>Merlin Olsen (NFL Hall of Famer &amp; actor) is from Utah State</li>
+          <li>Lars Peter Hansen, Nobel Prize winner in Economics, is a USU alum</li>
+          <li>Harry Reid (former U.S. Senate Majority Leader) attended USU</li>
+          <li>Logan, Utah, sits in Cache Valley — one of America's most scenic college settings</li>
+        </ul>
+      </div>
+
+      <div class="section-block">
+        <h3>🎓 Academics &amp; Research</h3>
+        <ul>
+          <li>Land-grant institution with deep roots in agricultural and applied research</li>
+          <li>Pillars: <strong>Space sciences, aerospace engineering, biotechnology, ecology, water resources, natural resources</strong></li>
+          <li>Houses the Space Dynamics Laboratory (USU Research Foundation) — major NASA and DoD partner</li>
+          <li>Strong programs: Engineering, Agriculture, Business, Education, Natural Resources</li>
+          <li>Operates 5 regional campuses + 20 distance education sites across Utah</li>
+          <li>Research units include the Agricultural Experiment Station and Utah Cooperative Fish &amp; Wildlife Research Unit</li>
+        </ul>
+      </div>
+
+      <div class="section-block">
+        <h3>🏆 Recent Athletic Highlights</h3>
+        <ul>
+          <li>Men's Basketball: consistently strong MWC program, multiple tournament appearances</li>
+          <li>Football: rising program; multiple bowl game appearances under HC Blake Anderson</li>
+          <li>Track &amp; Field: produced multiple national qualifiers and All-Americans</li>
+          <li>Jordan Love drafted 26th overall by Green Bay Packers (2020) and signed massive contract extension</li>
+          <li>Women's cross country has been nationally competitive</li>
+        </ul>
+      </div>
+
+      <div class="section-block full-width">
+        <h3>⚽ Sports Programs</h3>
+        <div class="sports-two-col">
+          <div class="sports-col">
+            <h4>Men's Sports</h4>
+            <ul>
+              <li>Football</li><li>Basketball</li><li>Baseball</li>
+              <li>Cross Country</li><li>Golf</li>
+              <li>Indoor/Outdoor Track &amp; Field</li>
+              <li>Tennis</li>
+            </ul>
+          </div>
+          <div class="sports-col">
+            <h4>Women's Sports</h4>
+            <ul>
+              <li>Basketball</li><li>Cross Country</li><li>Golf</li>
+              <li>Gymnastics</li><li>Soccer</li><li>Softball</li>
+              <li>Tennis</li><li>Indoor/Outdoor Track &amp; Field</li>
+              <li>Volleyball</li>
+            </ul>
+          </div>
+        </div>
+        <p style="margin-top:0.75rem;font-size:0.85rem;"><strong>Spirit Programs:</strong> Aggie Cheer, Aggie Dance Team, The Big Blue Band, ROTC Color Guard (fires cannon at football games after every score), True Aggie Night (touching a statue at midnight under certain moon conditions — a campus tradition)</p>
+      </div>
+
+      <div class="section-block full-width">
+        <h3>📱 Social Media</h3>
+        <div class="social-links">
+          <a class="social-link social-x" href="https://x.com/UtahState" target="_blank">𝕏 @UtahState</a>
+          <a class="social-link social-x" href="https://x.com/USUAggies" target="_blank">𝕏 @USUAggies (Athletics)</a>
+          <a class="social-link social-fb" href="https://www.facebook.com/utahstate" target="_blank">Facebook: Utah State</a>
+          <a class="social-link social-ig" href="https://www.instagram.com/utahstateuniversity" target="_blank">Instagram: @utahstateuniversity</a>
+          <a class="social-link social-ig" href="https://www.instagram.com/usuaggies" target="_blank">Instagram: @usuaggies</a>
+          <a class="social-link social-threads" href="https://www.threads.net/@utahstateuniversity" target="_blank">Threads: @utahstateuniversity</a>
+          <a class="social-link social-reddit" href="https://www.reddit.com/r/USUAggies/" target="_blank">r/USUAggies</a>
+        </div>
+      </div>
+
+      <div class="section-block full-width">
+        <h3>📚 Student Life &amp; Student-Athlete Info</h3>
+        <p>Utah State has a tight-knit campus community rooted in the scenic Cache Valley — skiing, hiking, and outdoor adventure are central to student life. The True Aggie Night tradition (touching the "A" statue at midnight on a full moon while kissing an Aggie) is a beloved rite of passage. USU's ROTC program is one of the most active in the West, contributing significantly to the game-day experience. The Space Dynamics Lab provides undergraduate research opportunities few schools can match. Student-athletes are supported by a dedicated academic center; the basketball and football programs have maintained competitive academic standards. USU has 180,000+ alumni worldwide.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="pac12-divider"><span>★ Pac-12 Member ★</span></div>
+
+  <!-- ───── WASHINGTON STATE ───── -->
+  <section class="school-card" id="wsu">
+    <div class="school-header">
+      <div class="school-color-bar" style="background:linear-gradient(to bottom,#981E32,#5E6A71)"></div>
+      <div class="school-title-block">
+        <div class="school-name" style="color:#981E32">Washington State University</div>
+        <div class="school-tagline" style="color:#5E6A71">Cougars · The Palouse &amp; The Pullman Fortress</div>
+        <div class="school-location">📍 Pullman, Washington &nbsp;|&nbsp; Founded 1890 &nbsp;|&nbsp; Public Land-Grant Research University</div>
+        <div class="school-meta-chips">
+          <span class="chip" style="color:#981E32">Crimson &amp; Gray</span>
+          <span class="chip" style="color:#981E32">~20,000 Students</span>
+          <span class="chip" style="color:#981E32">Legacy Pac-12 Survivor</span>
+          <span class="chip" style="color:#5E6A71">R1 Carnegie</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="school-body">
+
+      <div class="section-block">
+        <h3>🏛 At a Glance</h3>
+        <ul>
+          <li><strong>Mascot:</strong> Butch T. Cougar</li>
+          <li><strong>Colors:</strong> Crimson &amp; Gray</li>
+          <li><strong>Stadium:</strong> Gesa Field at Martin Stadium (capacity ~35,000)</li>
+          <li><strong>Arena:</strong> Friel Court at Beasley Coliseum</li>
+          <li><strong>Website:</strong> <a href="https://wsu.edu" target="_blank">wsu.edu</a></li>
+          <li><strong>Athletics:</strong> <a href="https://wsucougars.com" target="_blank">wsucougars.com</a></li>
+        </ul>
+      </div>
+
+      <div class="section-block">
+        <h3>⭐ If You Know, You Know</h3>
+        <ul>
+          <li>Pullman is one of the most remote Power-era college towns in America — this geographic isolation creates an unusually passionate, insular fan culture. <em>"The Cougar Nation travels."</em></li>
+          <li>The Apple Cup (vs. Washington) is one of the most heated rivalries in the Pacific Northwest — now a cross-conference matchup with extra emotional stakes after the conference collapse</li>
+          <li>WSU's "Cougar Gold" cheese (WSU Creamery) is world-famous and has been produced on campus since 1948 — you can order it online and it ships globally</li>
+          <li>The school held the Pac-12 brand and assets along with Oregon State after all other schools departed — a remarkable legal and institutional battle</li>
+          <li>Ryan Leaf and Drew Bledsoe are WSU's most famous NFL QBs</li>
+          <li>WSU has a world-class wine program in its School of Food Science — Palouse wine country is real</li>
+        </ul>
+      </div>
+
+      <div class="section-block">
+        <h3>🎓 Academics &amp; Research</h3>
+        <ul>
+          <li>R1 Carnegie classification (very high research activity)</li>
+          <li>Pillars: <strong>Neuroscience, materials science, energy systems, agriculture &amp; food systems, health sciences</strong></li>
+          <li>WSU Health Sciences has campuses in Spokane, Tri-Cities, Vancouver, and Everett</li>
+          <li>College of Veterinary Medicine — one of the top vet schools in the U.S.</li>
+          <li>Strong programs: Electrical Engineering, Computer Science, Business (Carson), Architecture</li>
+          <li>WSU Global Campus offers 80+ online degrees — major online education presence</li>
+        </ul>
+      </div>
+
+      <div class="section-block">
+        <h3>🏆 Recent Athletic Highlights</h3>
+        <ul>
+          <li>Football: played through the Pac-12 collapse with remarkable stability; 2025 record showed program resilience</li>
+          <li>Men's basketball: competitive despite resource constraints; building toward Pac-12 2.0 era</li>
+          <li>Cross Country: women's program has been nationally ranked</li>
+          <li>Wrestling: consistently competitive on the national stage</li>
+          <li>Golf programs have produced PGA Tour professionals</li>
+        </ul>
+      </div>
+
+      <div class="section-block full-width">
+        <h3>⚽ Sports Programs</h3>
+        <div class="sports-two-col">
+          <div class="sports-col">
+            <h4>Men's Sports</h4>
+            <ul>
+              <li>Football</li><li>Basketball</li><li>Baseball</li>
+              <li>Cross Country</li><li>Golf</li>
+              <li>Indoor/Outdoor Track &amp; Field</li>
+              <li>Tennis</li>
+            </ul>
+          </div>
+          <div class="sports-col">
+            <h4>Women's Sports</h4>
+            <ul>
+              <li>Basketball</li><li>Cross Country</li><li>Golf</li>
+              <li>Rowing</li><li>Soccer</li><li>Softball</li>
+              <li>Swimming &amp; Diving</li><li>Tennis</li>
+              <li>Track &amp; Field</li><li>Volleyball</li>
+            </ul>
+          </div>
+        </div>
+        <p style="margin-top:0.75rem;font-size:0.85rem;"><strong>Spirit Programs:</strong> WSU Cheer, Cougar Dance Team, Pride of the Palouse Marching Band (one of the best in the West), Crimson &amp; Gray Cougar Alumni Club</p>
+      </div>
+
+      <div class="section-block full-width">
+        <h3>📱 Social Media</h3>
+        <div class="social-links">
+          <a class="social-link social-x" href="https://x.com/wsunews" target="_blank">𝕏 @wsunews (University)</a>
+          <a class="social-link social-x" href="https://x.com/WSUCougars" target="_blank">𝕏 @WSUCougars (Athletics)</a>
+          <a class="social-link social-fb" href="https://www.facebook.com/washingtonstateuniversity" target="_blank">Facebook: WSU</a>
+          <a class="social-link social-ig" href="https://www.instagram.com/wsupullman" target="_blank">Instagram: @wsupullman</a>
+          <a class="social-link social-ig" href="https://www.instagram.com/wsucougars" target="_blank">Instagram: @wsucougars</a>
+          <a class="social-link social-threads" href="https://www.threads.net/@wsupullman" target="_blank">Threads: @wsupullman</a>
+          <a class="social-link social-reddit" href="https://www.reddit.com/r/wsu/" target="_blank">r/wsu</a>
+        </div>
+      </div>
+
+      <div class="section-block full-width">
+        <h3>📚 Student Life &amp; Student-Athlete Info</h3>
+        <p>Pullman's isolation creates a uniquely intense campus community — students don't just go to WSU, they live it. The campus and town are completely intertwined. Greek life is significant. The Cougar Gold cheese is a genuine campus institution that unites alumni worldwide. WSU student-athletes operate under one of the country's most rigorous academic support systems — the Academic Success &amp; Career Center in Bohler Gymnasium. The football program went through significant character tests during the Pac-12 collapse and emerged with institutional pride intact. The Pride of the Palouse marching band is widely considered one of the best in the West. WSU's online Global Campus means the "Cougar family" extends far beyond Pullman.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ CONFERENCE QUICK REFERENCE ═══ -->
+  <div class="pac12-divider"><span>★ Conference Quick Reference ★</span></div>
+
+  <section class="school-card" style="scroll-margin-top:60px">
+    <div class="school-header">
+      <div class="school-color-bar" style="background:linear-gradient(to bottom,#001F5B,#C8A951)"></div>
+      <div class="school-title-block">
+        <div class="school-name" style="color:#001F5B">New Pac-12 — At a Glance</div>
+        <div class="school-tagline" style="color:#C8A951">Commissioner: Teresa Gould &nbsp;|&nbsp; HQ: San Ramon, CA</div>
+        <div class="school-location">📍 Launch: July 1, 2026 &nbsp;|&nbsp; Media: CBS (primary), additional partners TBD</div>
+      </div>
+    </div>
+    <div class="school-body">
+      <div class="section-block full-width">
+        <h3>🗺 Member School Quick Reference</h3>
+        <table style="width:100%;font-size:0.83rem;border-collapse:collapse;margin-top:0.5rem">
+          <thead>
+            <tr style="background:#001F5B;color:white;font-family:'Barlow Condensed',sans-serif;letter-spacing:0.07em;text-transform:uppercase;font-size:0.72rem">
+              <th style="padding:0.5rem 0.75rem;text-align:left">School</th>
+              <th style="padding:0.5rem 0.75rem;text-align:left">Location</th>
+              <th style="padding:0.5rem 0.75rem;text-align:left">Nickname</th>
+              <th style="padding:0.5rem 0.75rem;text-align:left">Enrollment</th>
+              <th style="padding:0.5rem 0.75rem;text-align:left">Colors</th>
+              <th style="padding:0.5rem 0.75rem;text-align:left">Football?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid #eee">
+              <td style="padding:0.45rem 0.75rem;font-weight:600">Texas State</td>
+              <td style="padding:0.45rem 0.75rem">San Marcos, TX</td>
+              <td style="padding:0.45rem 0.75rem">Bobcats</td>
+              <td style="padding:0.45rem 0.75rem">44,000+</td>
+              <td style="padding:0.45rem 0.75rem">Maroon &amp; Gold</td>
+              <td style="padding:0.45rem 0.75rem">✅ FBS</td>
+            </tr>
+            <tr style="border-bottom:1px solid #eee;background:#fafafa">
+              <td style="padding:0.45rem 0.75rem;font-weight:600">Boise State</td>
+              <td style="padding:0.45rem 0.75rem">Boise, ID</td>
+              <td style="padding:0.45rem 0.75rem">Broncos</td>
+              <td style="padding:0.45rem 0.75rem">28,500</td>
+              <td style="padding:0.45rem 0.75rem">Blue &amp; Orange</td>
+              <td style="padding:0.45rem 0.75rem">✅ FBS</td>
+            </tr>
+            <tr style="border-bottom:1px solid #eee">
+              <td style="padding:0.45rem 0.75rem;font-weight:600">Colorado State</td>
+              <td style="padding:0.45rem 0.75rem">Fort Collins, CO</td>
+              <td style="padding:0.45rem 0.75rem">Rams</td>
+              <td style="padding:0.45rem 0.75rem">34,200</td>
+              <td style="padding:0.45rem 0.75rem">Green &amp; Gold</td>
+              <td style="padding:0.45rem 0.75rem">✅ FBS</td>
+            </tr>
+            <tr style="border-bottom:1px solid #eee;background:#fafafa">
+              <td style="padding:0.45rem 0.75rem;font-weight:600">Fresno State</td>
+              <td style="padding:0.45rem 0.75rem">Fresno, CA</td>
+              <td style="padding:0.45rem 0.75rem">Bulldogs</td>
+              <td style="padding:0.45rem 0.75rem">24,300</td>
+              <td style="padding:0.45rem 0.75rem">Cardinal &amp; Blue</td>
+              <td style="padding:0.45rem 0.75rem">✅ FBS</td>
+            </tr>
+            <tr style="border-bottom:1px solid #eee">
+              <td style="padding:0.45rem 0.75rem;font-weight:600">Gonzaga</td>
+              <td style="padding:0.45rem 0.75rem">Spokane, WA</td>
+              <td style="padding:0.45rem 0.75rem">Bulldogs / Zags</td>
+              <td style="padding:0.45rem 0.75rem">7,400</td>
+              <td style="padding:0.45rem 0.75rem">Blue, White &amp; Red</td>
+              <td style="padding:0.45rem 0.75rem">❌ Non-football</td>
+            </tr>
+            <tr style="border-bottom:1px solid #eee;background:#fafafa">
+              <td style="padding:0.45rem 0.75rem;font-weight:600">Oregon State</td>
+              <td style="padding:0.45rem 0.75rem">Corvallis, OR</td>
+              <td style="padding:0.45rem 0.75rem">Beavers</td>
+              <td style="padding:0.45rem 0.75rem">38,000</td>
+              <td style="padding:0.45rem 0.75rem">Orange &amp; Black</td>
+              <td style="padding:0.45rem 0.75rem">✅ FBS</td>
+            </tr>
+            <tr style="border-bottom:1px solid #eee">
+              <td style="padding:0.45rem 0.75rem;font-weight:600">San Diego State</td>
+              <td style="padding:0.45rem 0.75rem">San Diego, CA</td>
+              <td style="padding:0.45rem 0.75rem">Aztecs</td>
+              <td style="padding:0.45rem 0.75rem">41,000+</td>
+              <td style="padding:0.45rem 0.75rem">Scarlet &amp; Black</td>
+              <td style="padding:0.45rem 0.75rem">✅ FBS</td>
+            </tr>
+            <tr style="border-bottom:1px solid #eee;background:#fafafa">
+              <td style="padding:0.45rem 0.75rem;font-weight:600">Utah State</td>
+              <td style="padding:0.45rem 0.75rem">Logan, UT</td>
+              <td style="padding:0.45rem 0.75rem">Aggies</td>
+              <td style="padding:0.45rem 0.75rem">~30,000</td>
+              <td style="padding:0.45rem 0.75rem">Navy &amp; White</td>
+              <td style="padding:0.45rem 0.75rem">✅ FBS</td>
+            </tr>
+            <tr>
+              <td style="padding:0.45rem 0.75rem;font-weight:600">Washington State</td>
+              <td style="padding:0.45rem 0.75rem">Pullman, WA</td>
+              <td style="padding:0.45rem 0.75rem">Cougars</td>
+              <td style="padding:0.45rem 0.75rem">~20,000</td>
+              <td style="padding:0.45rem 0.75rem">Crimson &amp; Gray</td>
+              <td style="padding:0.45rem 0.75rem">✅ FBS</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="section-block full-width">
+        <h3>🔗 Conference Social Media</h3>
+        <div class="social-links">
+          <a class="social-link social-x" href="https://x.com/pac12" target="_blank">𝕏 @pac12</a>
+          <a class="social-link social-ig" href="https://www.instagram.com/pac12conference" target="_blank">Instagram: @pac12conference</a>
+          <a class="social-link social-fb" href="https://www.facebook.com/pac12" target="_blank">Facebook: Pac-12</a>
+        </div>
+      </div>
+
+      <div class="section-block full-width">
+        <h3>📝 Notes on Student-Athlete GPAs</h3>
+        <p style="font-size:0.9rem">The NCAA's Academic Progress Rate (APR) and Graduation Success Rate (GSR) are the primary public metrics for student-athlete academic performance. All nine Pac-12 member institutions are required to maintain NCAA academic standards. Specific program-level GPA data is reported by each university's athletic department and is updated each academic year. Generally:</p>
+        <ul style="margin-top:0.6rem">
+          <li><strong>Gonzaga</strong> consistently ranks among the top programs nationally for student-athlete GPA and graduation rates due to its small class sizes and Jesuit mission.</li>
+          <li><strong>CSU, Oregon State, and SDSU</strong> have been recognized by the Pac-12 (legacy conference) for Academic All-Conference honors in multiple sports annually.</li>
+          <li><strong>Texas State</strong> has publicly committed to building out student-athlete academic support infrastructure as part of its Pac-12 transition, including the new $2M student-athlete academic center.</li>
+          <li>The NCAA's most recent data shows Pac-12 programs (legacy + new members) maintaining an average GSR above 85%, among the highest of any conference.</li>
+          <li>For current GPA data, check each school's <em>Student-Athlete Advisory Committee</em> reports or the NCAA's public APR database at <a href="https://web3.ncaa.org/aprsearch/aprsearch" target="_blank">ncaa.org/aprsearch</a>.</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>Compiled May 2026 for informational purposes. Data sourced from university websites, Pac-12 Conference announcements, ESPN, US News &amp; World Report, and Texas State University Hillviews Magazine (February 2026).</p>
+  <p style="margin-top:0.5rem">Pac-12 Conference: <a href="https://pac-12.com" target="_blank">pac-12.com</a> &nbsp;|&nbsp; <a href="https://x.com/pac12" target="_blank">@pac12 on X</a></p>
+</footer>
+
+</body>
+</html>
